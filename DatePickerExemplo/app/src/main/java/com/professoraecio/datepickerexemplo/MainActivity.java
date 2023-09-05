@@ -8,7 +8,11 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,10 +31,19 @@ public class MainActivity extends AppCompatActivity {
         int anoAtual = calendario.get(Calendar.YEAR);
         int mesAtual = calendario.get(Calendar.MONTH);
         int diaAtual = calendario.get(Calendar.DATE);
-        int diaSemana = calendario.get(Calendar.DAY_OF_WEEK);
+
         DatePickerDialog dialog = new DatePickerDialog(this,new DatePickerDialog.OnDateSetListener(){
             @Override
             public void onDateSet(DatePicker datePicker, int ano, int mes, int dia) {
+
+                Date dt = new Date(ano, mes, dia);
+
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(dt);
+
+                int diaSemana = cal.get(Calendar.DAY_OF_WEEK);
+                diaSemana--;
+
                 mes++;
                 String diaSemanaString = "";
                 switch (diaSemana){
