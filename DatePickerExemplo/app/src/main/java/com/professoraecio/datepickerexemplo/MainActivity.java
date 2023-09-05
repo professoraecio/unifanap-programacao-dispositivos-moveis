@@ -27,12 +27,38 @@ public class MainActivity extends AppCompatActivity {
         int anoAtual = calendario.get(Calendar.YEAR);
         int mesAtual = calendario.get(Calendar.MONTH);
         int diaAtual = calendario.get(Calendar.DATE);
+        int diaSemana = calendario.get(Calendar.DAY_OF_WEEK);
         DatePickerDialog dialog = new DatePickerDialog(this,new DatePickerDialog.OnDateSetListener(){
             @Override
             public void onDateSet(DatePicker datePicker, int ano, int mes, int dia) {
                 mes++;
+                String diaSemanaString = "";
+                switch (diaSemana){
+                    case 1:
+                        diaSemanaString = "Domingo";
+                        break;
+                    case 2:
+                        diaSemanaString = "Segunda";
+                        break;
+                    case 3:
+                        diaSemanaString = "Terça";
+                        break;
+                    case 4:
+                        diaSemanaString = "Quarta";
+                        break;
+                    case 5:
+                        diaSemanaString = "Quinta";
+                        break;
+                    case 6:
+                        diaSemanaString = "Sexta";
+                        break;
+                    case 7:
+                        diaSemanaString = "Sábado";
+                        break;
+
+                }
                 String m = mes < 10 ? "0" + mes : "" + mes;
-                textViewDataEscolhida.setText("" + dia + "/" + m + "/" + ano);
+                textViewDataEscolhida.setText("" + dia + "/" + m + "/" + ano + " " + diaSemanaString);
             }
 
         },anoAtual,mesAtual,diaAtual);
