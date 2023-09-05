@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TimePickerExemplo</string>
+    <string name="escolher_hora">Escolher Hora</string>
+    <string name="hora_escolhida">Hora Escolhida</string>
+</resources>
