@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Alert Dialog Exemplo</string>
+
+    <string name="confirma_cadastro">Deseja realmente concluir o cadastro?</string>
+    <string name="sim">Sim</string>
+    <string name="cancelar">Cancelar</string>
+    
 </resources>
