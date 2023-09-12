@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CheckBox Exemplo</string>
+
+    <string name="marcar_desmarcar">Marcar / Desmarcar</string>
+    <string name="estado_desmarcar">Estado do CheckBox: Desmarcado</string>
+    <string name="estado_marcar">Estado do CheckBox: Marcado</string>
+
+</resources>
