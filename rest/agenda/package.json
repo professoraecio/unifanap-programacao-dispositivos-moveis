@@ -1,0 +1,19 @@
+{
+  "name": "agenda",
+  "version": "1.0.0",
+  "description": "API REST para uma agenda de contatos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "API",
+    "REST",
+    "agenda"
+  ],
+  "author": "Professor Aécio",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
