@@ -8,6 +8,8 @@ app.use(bodyParser.urlencoded({extended : false})); // Config body-parser
 app.use(bodyParser.json()); // Config body-parser
 
 // <rotas>
+const contatoDao = require('./rotas/contatoDao');
+app.use(URL_BASE + '/contato-dao',contatoDao);
 
 // </rotas>
 
