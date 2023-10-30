@@ -69,4 +69,4 @@ router.post('/create',(req,res,next) => {
     });
 });
 
-module.exports = router; // Exportar módulo para uso
+module.exports = router; // Exportar módulo para uso no servidor
