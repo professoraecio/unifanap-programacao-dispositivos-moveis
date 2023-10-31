@@ -1,29 +1,29 @@
-const URL_BASE = '/api.agenda'; // URL Base
-const express = require('express'); // Biblioteca do Express
-const app = express(); // Criando uma instância do Express
-const morgan = require('morgan'); // Biblioteca do Morgan
-app.use(morgan('dev')); // Usar o depurador Morgan
-const bodyParser = require('body-parser'); // Biblioteca do body-parser
-app.use(bodyParser.urlencoded({extended : false})); // Config body-parser
-app.use(bodyParser.json()); // Config body-parser
+const URL_BASE = '/api.agenda';
+const express = require('express');
+const app = express();
+const morgan = require('morgan');
+app.use(morgan('dev'));
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended : false}));
+app.use(bodyParser.json());
 
+// Rotas virão neste ponto
 // <rotas>
 const contatoDao = require('./rotas/contatoDao');
 app.use(URL_BASE + '/contato-dao',contatoDao);
 
 // </rotas>
 
-// http://localhost:3000/api.agenda
-app.use(URL_BASE,(req,res,next) =>{ // Rota URL Base
+app.use(URL_BASE,(req,res,next) =>{
     res.status(200).send({
-        resposta : 'URL Base da API REST funcionou!'
+        resposta : 'URL do app funcionou!'
     });
 });
 
-app.use((req,res,next) => { // Rota não encontrada
-    const erro = new Error('Rota não encontrada!');
+app.use((req,res,next) =>{
+    const erro = new Error('Rota não encontrada');
     erro.status = 404;
     next(erro);
 });
 
-module.exports = app; // Exportar o módulo para uso
+module.exports = app;

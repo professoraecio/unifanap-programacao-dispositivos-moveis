@@ -1,5 +1,5 @@
-const http = require('http'); // Importar lib http
-const app = require('./app'); // Importar arquivo app.js
-const port = process.env.port || 3000; // Config escutar porta
-const server = http.createServer(app); // Criando servidor
-server.listen(port); // Escutar porta
+const http = require('http');
+const app = require('./app');
+const port = process.env.PORT || 3000;
+const server = http.createServer(app);
+server.listen(port);
